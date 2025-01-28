@@ -1,29 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travo Official</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="headerp1">
-        <ul>
-          <li><img src="Images/Tripadvisor-Logo.png" alt="Travo" /></li>
-          <div class="headcenter">
-            <ul>
-                <li>Discover</li>
-                <li>Trip</li>
-                <li>Review</li>
-                <li>Forums</li>
-                <li>Forums1</li>
-                <li>Forums2</li>
-            </ul>
-          </div>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripGuide - Find Your Perfect Stay</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>TripGuide</span>
       </div>
-    </header>
-  </body>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Hotels</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Things to Do</a>
+        <button class="sign-in-btn">Sign In</button>
+      </div>
+      <button class="menu-btn" id="menuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Find your perfect stay</h1>
+      <div class="search-container">
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Where to?" id="searchInput">
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>About TripGuide</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Write a Review</a></li>
+            <li><a href="#">Add a Place</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Travelers' Choice</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Do Business With Us</h3>
+          <ul>
+            <li><a href="#">Owners</a></li>
+            <li><a href="#">Business Advantage</a></li>
+            <li><a href="#">Sponsored Placements</a></li>
+            <li><a href="#">Access Our Content</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get the App</h3>
+          <p>Download the app for easy access to bookings on the go.</p>
+          <div class="app-buttons">
+            <button>App Store</button>
+            <button>Google Play</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TripGuide. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
 </html>
