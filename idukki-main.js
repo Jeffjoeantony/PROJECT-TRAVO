@@ -1,14 +1,57 @@
-// Add smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Carousel functionality
+const carousel = {
+    currentSlide: 0,
+    slides: document.querySelectorAll('.carousel-slide'),
+    totalSlides: document.querySelectorAll('.carousel-slide').length,
+    slideIndicators: document.querySelectorAll('.slide-indicators span'),
+    autoPlayInterval: null,
+    
+    init() {
+        this.showSlide(this.currentSlide);
+        this.startAutoPlay();
+    },
+
+    showSlide(index) {
+        // Remove active class from all slides
+        this.slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Add active class to current slide
+        this.slides[index].classList.add('active');
+        
+        // Update indicators
+        this.updateIndicators(index);
+    },
+
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.showSlide(this.currentSlide);
+    },
+
+    updateIndicators(index) {
+        // Update slide numbers
+        this.slideIndicators[0].textContent = String(index + 1).padStart(2, '0');
+        this.slideIndicators[1].textContent = String(this.totalSlides).padStart(2, '0');
+    },
+
+    startAutoPlay() {
+        // Clear any existing interval
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+        }
+        
+        // Start new interval
+        this.autoPlayInterval = setInterval(() => {
+            this.nextSlide();
+        }, 4000); // Change slide every 4 seconds
+    }
+};
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    carousel.init();
 });
 
-// Add scroll event listener for header transparency
+// Header transparency
 const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -18,7 +61,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add hover effect for destination cards
+// Destination cards hover effect
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -31,17 +74,12 @@ cards.forEach(card => {
     });
 });
 
-// Simple slideshow functionality for hero section
-let currentSlide = 3;
-const totalSlides = 4;
-const slideIndicators = document.querySelectorAll('.slide-indicators span');
-
-function updateSlideIndicators() {
-    slideIndicators[0].textContent = String(currentSlide).padStart(2, '0');
-    slideIndicators[1].textContent = String(currentSlide + 1).padStart(2, '0');
-}
-
-setInterval(() => {
-    currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
-    updateSlideIndicators();
-}, 5000);
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

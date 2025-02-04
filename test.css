@@ -239,16 +239,17 @@ nav {
 }
 
 .explore-content > p {
-    max-width: 600px;
     margin-bottom: 3rem;
     color: #666;
     line-height: 1.6;
+    border: 2px solid red;
 }
 
 .destination-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 50px
 }
 
 .card {
@@ -396,4 +397,28 @@ footer {
     .search-container input {
         width: 200px;
     }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    text-align: center;
+    padding: 4.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-bottom: 100px;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }

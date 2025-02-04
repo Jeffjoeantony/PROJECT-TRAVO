@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplorer - Discover Amazing Places</title>
+    <link rel="stylesheet" href="kottayam-main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TravelExplorer</div>
+        <div class="nav-links">
+            <a href="#destinations">Destinations</a>
+            <a href="#hidden-gems">Hidden Gems</a>
+            <a href="#guides">Local Guides</a>
+            <a href="#reviews">Reviews</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search destinations...">
+            <button onclick="searchDestinations()">Search</button>
+        </div>
+    </header>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="section">
+        <h2>Popular Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination-card" onclick="showDestinationDetail('Kumarakom-bird')">
+                <img src="https://images.pexels.com/photos/15308719/pexels-photo-15308719/free-photo-of-a-view-of-a-river-with-palm-trees-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Beach">
+                <h3>Beach Paradise</h3>
+                <p>Discover pristine beaches and crystal-clear waters</p>
+            </div>
+            <div class="destination-card" onclick="showDestinationDetail('Illikkal-Kallu')">
+                <img src="https://images.pexels.com/photos/15308719/pexels-photo-15308719/free-photo-of-a-view-of-a-river-with-palm-trees-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mountain">
+                <h3>Mountain Escape</h3>
+                <p>Experience breathtaking mountain views</p>
+            </div>
+            <div class="destination-card" onclick="showDestinationDetail('Malarikkal-River')">
+                <img src="https://images.pexels.com/photos/15308719/pexels-photo-15308719/free-photo-of-a-view-of-a-river-with-palm-trees-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="City">
+                <h3>Urban Adventure</h3>
+                <p>Explore vibrant city life and culture</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Detail Modal -->
+    <div id="destination-detail" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDestinationDetail()">&times;</span>
+            <div class="destination-header">
+                <img id="destination-main-image" src="https://images.pexels.com/photos/674804/pexels-photo-674804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Destination">
+                <h2 id="destination-title"></h2>
+            </div>
+            
+            <!-- Overview Section -->
+            <section class="detail-section">
+                <h3>Overview</h3>
+                <p id="destination-overview"></p>
+                <div class="quick-info">
+                    <div class="info-item">
+                        <span class="icon">🌡️</span>
+                        <span id="weather">Best Time to Visit: <span id="best-time"></span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">💰</span>
+                        <span id="budget">Average Budget: <span id="avg-budget"></span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">⏰</span>
+                        <span id="duration">Ideal Duration: <span id="ideal-duration"></span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Things to Do -->
+            <section class="detail-section">
+                <h3>Things to Do</h3>
+                <div id="activities" class="activities-grid"></div>
+            </section>
+
+            <!-- Where to Stay -->
+            <section class="detail-section">
+                <h3>Nearby Hotels</h3>
+                <div id="hotels" class="hotels-grid"></div>
+            </section>
+
+            <!-- How to Get There -->
+            <section class="detail-section">
+                <h3>How to Get There</h3>
+                <div id="transportation" class="transportation-info"></div>
+            </section>
+
+            <!-- Local Tips -->
+            <section class="detail-section">
+                <h3>Local Tips</h3>
+                <ul id="local-tips" class="tips-list"></ul>
+            </section>
+
+            <!-- Nearby Attractions -->
+            <section class="detail-section">
+                <h3>Nearby Attractions</h3>
+                <div id="nearby" class="nearby-grid"></div>
+            </section>
+
+            <!-- Reviews -->
+            <section class="detail-section">
+                <h3>Traveler Reviews</h3>
+                <div id="destination-reviews" class="reviews-grid"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Hidden Gems -->
+    <section id="hidden-gems" class="section">
+        <h2>Hidden Gems</h2>
+        <div class="gems-container">
+            <div class="gem-card">
+                <img src="https://images.pexels.com/photos/15308719/pexels-photo-15308719/free-photo-of-a-view-of-a-river-with-palm-trees-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hidden Place">
+                <h3>Secret Waterfall</h3>
+                <p>A magical waterfall hidden in the forest</p>
+                <span class="tag">Off the beaten path</span>
+            </div>
+            <div class="gem-card">
+                <img src="https://images.pexels.com/photos/15308719/pexels-photo-15308719/free-photo-of-a-view-of-a-river-with-palm-trees-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Local Restaurant">
+                <h3>Local Eatery</h3>
+                <p>Authentic local cuisine experience</p>
+                <span class="tag">Local favorite</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Guides -->
+    <section id="guides" class="section">
+        <h2>Local Guides</h2>
+        <div class="guides-container">
+            <div class="guide-card">
+                <img src="https://source.unsplash.com/200x200/?portrait" alt="Guide" class="guide-photo">
+                <h3>John Doe</h3>
+                <p>Mountain Trekking Expert</p>
+                <button class="contact-btn">Contact Guide</button>
+            </div>
+            <div class="guide-card">
+                <img src="https://source.unsplash.com/200x200/?woman-portrait" alt="Guide" class="guide-photo">
+                <h3>Jane Smith</h3>
+                <p>Cultural Tour Specialist</p>
+                <button class="contact-btn">Contact Guide</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <h2>Traveler Reviews</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Amazing experience! The hidden waterfall was breathtaking."</p>
+                <span class="reviewer">- Mike Johnson</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>"Great local guide, showed us the best local spots!"</p>
+                <span class="reviewer">- Sarah Williams</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Discover the world's hidden treasures with TravelExplorer</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@travelexplorer.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="kottayam-main.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+// ... (existing JavaScript code remains the same) ...
+
+// Add smooth scroll behavior for all sections
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Initialize animation on scroll
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.activity-card, .hotel-card, .transport-card, .tip-card, .attraction-card, .review-card');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('animate');
+        }
+    });
+};
+
+window.addEventListener('scroll', animateOnScroll);
